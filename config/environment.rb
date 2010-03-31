@@ -93,7 +93,6 @@ Rails::Initializer.run do |config|
   config.gem "djanowski-snippets", :lib => 'snippets', :source => 'http://gems.github.com'
   config.gem "settings"
   config.gem "haml"
-  config.gem "citrusbyte-milton", :lib => 'milton', :source => 'http://gems.github.com'
 
 
   config.action_controller.session = {
