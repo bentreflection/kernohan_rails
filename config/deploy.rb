@@ -18,7 +18,7 @@ server "singwithkellykernohan.com", :app, :web, :db, :primary => true
 
 set :user, "kellyker"
 
-
+set :keep_releases, 2
 set :use_sudo, false
 
 namespace :deploy do
@@ -32,7 +32,7 @@ end
 
 desc "Restart the web server. Overrides the default task for Site5 use."
 task :restart, :roles => :app do
-  #run "killall -q dispatch.fcgi"
+  run "killall -q dispatch.fcgi"
   run "chmod 755 #{current_path}/public/dispatch.fcgi"
   run "touch #{current_path}/public/dispatch.fcgi"
 end
