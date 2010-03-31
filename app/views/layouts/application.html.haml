@@ -1,0 +1,25 @@
+!!!
+%html{:xmlns => "http://www.w3.org/1999/xhtml"}
+  %head
+    %title="#{(@page && !@page.header_title.blank? ? "#{@page.header_title} | " : "")}Kelly Kernohan Vocal Studio"
+    %meta{:"http-equiv" => "Content-Type", :content => "text/html; charset=utf-8"}
+    = stylesheet_link_tag "reset", "app"
+  %body
+    %ul#main_nav
+      - for page in Page.nav_items
+        %li{:class => (params[:id] == page.slug) ? "selected" : ""}=link_to page.nav_title, (page.slug == 'home' ? '/' : (page.core_page ? "/#{page.slug}" : "/pages/#{page.slug}"))
+    #main
+      <!--[if IE]>
+      .corner_tl
+      .corner_tr
+      <![endif]-->
+      #header
+        = link_to "Kelly Kernohan Vocal Studio", root_path, :id => "site_title"
+        .head_snippet=snippet('head_snippet')
+      #content=yield
+      <!--[if IE]>
+      .corner_bl
+      .corner_br
+      <![endif]-->      
+    #footer
+      %p="&copy;#{Time.now.year} Kelly Kernohan Vocal Studio"

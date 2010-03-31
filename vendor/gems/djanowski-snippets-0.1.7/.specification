@@ -1,0 +1,77 @@
+--- !ruby/object:Gem::Specification 
+name: djanowski-snippets
+version: !ruby/object:Gem::Version 
+  prerelease: false
+  segments: 
+  - 0
+  - 1
+  - 7
+  version: 0.1.7
+platform: ruby
+authors: 
+- Damian Janowski
+autorequire: 
+bindir: bin
+cert_chain: []
+
+date: 2008-10-06 00:00:00 -07:00
+default_executable: 
+dependencies: []
+
+description: ""
+email: damian.janowski@gmail.com
+executables: []
+
+extensions: []
+
+extra_rdoc_files: 
+- README.textile
+files: 
+- lib/snippet.rb
+- lib/snippets/helper.rb
+- lib/snippets/parsers/html.rb
+- lib/snippets/parsers/plain_text.rb
+- lib/snippets/parsers/textile.rb
+- lib/snippets.rb
+- rails/init.rb
+- init.rb
+- README.textile
+- MIT-LICENSE
+- Rakefile
+has_rdoc: true
+homepage: 
+licenses: []
+
+post_install_message: 
+rdoc_options: 
+- --line-numbers
+- --inline-source
+- --title
+- snippets
+- --main
+- README.textile
+require_paths: 
+- lib
+required_ruby_version: !ruby/object:Gem::Requirement 
+  requirements: 
+  - - ">="
+    - !ruby/object:Gem::Version 
+      segments: 
+      - 0
+      version: "0"
+required_rubygems_version: !ruby/object:Gem::Requirement 
+  requirements: 
+  - - ">="
+    - !ruby/object:Gem::Version 
+      segments: 
+      - 0
+      version: "0"
+requirements: []
+
+rubyforge_project: 
+rubygems_version: 1.3.6
+signing_key: 
+specification_version: 2
+summary: Include snippets of content in your Rails views and let the client modify them.
+test_files: []
+

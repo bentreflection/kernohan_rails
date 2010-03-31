@@ -1,0 +1,81 @@
+@import styles.sass
+
+
+h1
+  :color #c1272c
+  :margin-bottom 20px
+  
+  
+// tables ---------------------------------------------------------------------
+table
+  :width 100%
+  :text-align left
+  :font-size 12px
+  a
+    :color #1A9FC0
+  tr
+    &.expandable
+      :border 0px
+      td
+        :padding 0px
+      ul
+        :display none
+        :padding 4px 20px 4px 40px
+        :font-size 11px
+        :color #666666
+  thead
+    th
+      :background #fafafa
+    tr
+      :border 0px
+      
+  tbody
+    tr:hover
+      :background-color #fafafa
+  th
+    :padding 10px 4px 4px 4px
+  td
+    :border-top 1px solid #e2e2e2
+    :vertical-align middle
+    :padding 4px
+  td, th
+    &:first-child
+      :padding-left 8px
+    &:last-child
+      :padding-right 8px
+    &.numeric
+      :text-align right
+    &.logo
+      :width 20px
+img.logo
+  :border 1px solid #bebebe
+  :padding 1px
+// sponsors
+#new_event_sponsor
+  :margin-bottom 40px
+  
+table.event_sponsors
+  :border-collapse separate
+  td
+    :padding 5px
+  tr
+    :border 0px
+    td
+      :border-top 1px solid transparent
+      :border-bottom 1px solid transparent
+      :margin 1px 0px
+    &:hover
+      td
+        :border-top 1px solid #E2E2E2
+        :border-bottom 1px solid #E2E2E2
+        
+  a
+    :float left
+  a.delete
+    :background transparent url(/images/icons/actions/delete.png) 0px 0px no-repeat
+    :width 16px
+    :height 16px
+    :display block
+    :text-indent -9999px
+    :float right
+    :margin-left 5px

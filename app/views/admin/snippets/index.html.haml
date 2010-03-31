@@ -1,0 +1,21 @@
+%h1 Snippets
+%table
+  %thead
+    %tr
+      %th Slug
+      %th Text
+      %th Notes
+      %th &nbsp;
+  %tbody
+    - if @snippets.empty?
+      %tr
+        %td{:colspan => 4} No Snippets have been created yet.
+    - for snippet in @snippets do
+      %tr
+        %td=snippet.slug.titleize
+        %td=h truncate(snippet.text, :length => 50)
+        %td=truncate(snippet.notes, :length => 50)
+        %td.actions
+          =link_to 'edit', edit_admin_snippet_path(snippet), :class => 'edit', :title => "Edit Snippet"
+          =link_to 'delete', admin_snippet_path(snippet), :class => 'delete', :title => "Delete Page", :method => :delete, :confirm => "Are you sure you want to delete this Page? This cannot be undone."
+          

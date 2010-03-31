@@ -1,0 +1,5 @@
+- content_for :crumbs do
+  =link_to "&laquo; Back to Pages", admin_pages_path
+%h1 New Page
+- form_for [ :admin, @page ], :html => { :enctype => 'multipart/form-data' } do |f|
+  = render :partial => 'form', :locals => {:f => f}

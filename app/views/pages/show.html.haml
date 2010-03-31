@@ -1,0 +1,6 @@
+%h1=@page.tagline
+.main
+  - if @page.image
+    .page_thumb=image_tag(@page.image.public_path(:thumb))
+  =@page.text
+.sub= render :partial => "schedule"

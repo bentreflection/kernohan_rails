@@ -1,0 +1,7 @@
+%h1 404 Page Not Found!
+#page_not_found.main
+  %p.first
+    The page you were looking for doesn't seem to exist, but that's OK!
+    After all, you're here to get better at singing, not browse around, right?
+  %p.first="Go ahead and send Kelly an #{link_to "email", "mailto:kellykernohan@hotmail.com" }. Get set up with a lesson. Make it happen."
+.sub= render :partial => "schedule"

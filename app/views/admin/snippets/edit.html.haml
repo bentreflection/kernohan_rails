@@ -1,0 +1,14 @@
+- content_for :crumbs do
+  = link_to "&laquo; Back to Snippets", admin_snippets_path
+%h1 Edit Snippet
+- form_for [:admin, @snippet] do |f|
+  .field
+    = f.label :slug, @snippet.slug.titleize
+  .field
+    = f.label :notes
+    = f.text_area :notes
+  .field
+    = f.label :text
+    = f.text_area :text, :class => "mceEditor"
+  .field
+    = f.submit 'Save Snippet', :class => 'submit'

@@ -1,0 +1,234 @@
+// defaults
+
+!width = 960px
+!dark_blue = #62767f
+=clearfix
+  *display: inline-block
+  &:after
+    content: " "
+    display: block
+    height: 0
+    clear: both
+    visibility: hidden
+
+
+// layout
+body
+  :font-family lucida grande,"Lucida Grande",sans-serif
+  :font-size .75em
+  :color #4F4F4F
+  :background #1D1C1E url(/images/music_bg.gif) 0px -10px no-repeat
+  :line-height 1.2
+a
+  :color #8E71AA
+  :text-decoration none
+  &:hover
+    :text-decoration underline
+#main
+  :background transparent url(/images/bg_main.jpg) 0px 0px  
+  :width = !width
+  :padding 0px 40px
+  :margin 0px auto
+  :-moz-border-radius 10px
+  :-webkit-border-radius 10px
+  :position relative
+/ #top_bar
+/   :margin-top 40px
+/ #top_bar_content
+/   :width = !width
+/   :position relative
+/   :height 40px
+/   :margin 0px auto
+ul#main_nav
+  :width = !width
+  :margin 60px auto 0px
+  :padding 0px 40px
+  :font-size 1.2em
+  +clearfix
+  li
+    :display inline
+    :float left
+    :margin 0px 20px 0px 0px
+    &.selected
+      :background #F4F5F0 url(/images/corner_left.gif) 0px 0px no-repeat
+      a
+        :background transparent url(/images/corner_right.gif) top right no-repeat
+        :padding 5px 10px
+        :color #1D1C1E
+  a
+    :color #7F7F7F
+    :padding 5px 10px
+    :float left
+    &:hover
+      :color #ffffff
+      :text-decoration none
+
+
+
+// header
+#header
+  :padding-top 40px
+  :padding-bottom 30px
+  :width = !width
+  :margin 0px auto
+  :position relative
+  
+  +clearfix
+  p
+    :position absolute
+    :width 500px
+    :right 0px
+    :top 0px
+    :letter-spacing 1px
+    :padding 65px 0px 72px
+    :margin-top 5px
+    :background transparent url(/images/bg_notes.jpg) right top no-repeat
+    /:background transparent url(/images/sls_logo.png) 0px 0px no-repeat
+a#site_title
+  :text-indent -9999px
+  :outline none
+  :display block
+  :background transparent url(/images/logotreble.gif) 0px 0px no-repeat
+  :width 270px
+  :height 115px
+#head_image
+  :border 1px solid #E7E7DD
+  :position absolute
+  :right 0px
+  :top 0px
+  :width 500px
+  :height 109px
+  :background #ffffff
+  :padding 5px
+// footer
+#footer
+  :padding-top 10px
+  :font-size .9em
+  :color #9F9F95
+  :text-align right
+  :padding-bottom 60px
+  :background transparent url(/images/music_bg.gif) right -20px no-repeat
+  p
+    :width = !width
+    :margin 0px auto
+// content
+#content
+  :width = !width
+  :margin 0px auto
+  :padding-bottom 40px
+  +clearfix
+  p
+    :line-height 1.5
+    :margin-bottom 1em
+    &.first
+      :font-size 1.1em
+      :letter-spacing 1px
+      :margin-bottom 1.5em
+    img
+      :float left
+      :padding 5px
+      :border 1px solid #E7E7DD
+      :background #ffffff
+      :margin-right 10px
+      :margin-bottom 10px
+      :-moz-border-radius 5px
+  ul
+    :padding 0px 1em 1em
+    span
+      :font-weight bold
+h2
+  :margin-bottom 1em
+
+ul.splash_images
+  :margin-bottom 30px
+  +clearfix
+  li
+    :border 1px solid #E7E7DD
+    :background #ffffff
+    :float left
+    :display inline
+    :padding 5px
+    &.center
+      :margin 0px 20px
+h1
+  :font-size 2.2em
+  :border-bottom 3px solid #E7E7DD
+  :border-top 3px solid #E7E7DD
+  :padding 10px
+  :margin-bottom 30px
+  :font-family Garamond,‘Hoefler Text’,‘Times New Roman’,Times,serif
+.main
+  :float left
+  :width 630px
+  :margin-right 30px
+#page_not_found
+  :height 300px
+  :background transparent url(/images/404.gif) 0px 0px no-repeat
+    
+.sub
+  :float left
+  :width 300px
+#content p.schedule
+  :background #EFEFE6
+  :padding 20px
+  :margin-bottom 3em
+.half_left
+  :width 300px
+  :margin-right 30px
+  :float left
+.half_right
+  :width 300px
+  :float left
+.map
+  :padding 5px
+  :border 1px solid #E7E7DD
+  :background #ffffff
+  
+a.dark_link
+  :background #DDDDD0
+  :display block
+  :padding 5px
+  :color #1D1C1E
+  :font-weight bold
+  :margin 1em 0px
+  :text-align center
+  &:hover
+    :text-decoration none
+    :background #A2A2A2
+    :color #ffffff  
+    
+ 
+.page_thumb
+  :float left
+  :padding 5px
+  :border 1px solid #E7E7DD
+  :background #ffffff
+  :margin-right 10px
+  :margin-bottom 10px
+  :-moz-border-radius 5px
+
+    
+// IE only styles
+.corner_tl, .corner_tr, .corner_bl, .corner_br
+  :background-image url(/images/ie_corners_main.gif)
+  :width 10px
+  :height 10px
+  :position absolute
+  :font-size 0px
+  :background-repeat no-repeat
+.corner_tl
+  :top 0px
+  :left 0px
+  :background-position 0px 0px
+.corner_tr
+  :top 0px
+  :right 0px
+  :background-position -10px 0px
+.corner_bl
+  :bottom -1px
+  :left 0px
+  :background-position 0px -11px
+.corner_br
+  :bottom -1px
+  :right 0px
+  :background-position -10px -11px

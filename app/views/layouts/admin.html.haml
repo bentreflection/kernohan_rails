@@ -1,0 +1,28 @@
+!!!
+%html{:xmlns => "http://www.w3.org/1999/xhtml"}
+  %head
+    %title Kelly Kernohan Admin Section
+    %meta{:"http-equiv" => "Content-Type", :content => "text/html; charset=utf-8"}
+    = stylesheet_link_tag "reset", "admin"
+    = javascript_include_tag 'jquery-1.4.1.min','application'
+  %body.admin
+    #header
+      #header_content
+        = link_to "Administration", root_path, :id => "logo"
+        %ul#nav
+          %li= link_to 'Snippets', admin_snippets_path, :class => "nav_link"
+          %li= link_to 'Pages', admin_pages_path, :class => "nav_link"
+          %li= link_to 'Contact Info', edit_admin_contact_info_path(ContactInfo.find_or_create_by_slug(:slug => 'contact')), :class => "nav_link"
+    #main
+      #main_content
+        - [:error, :success, :notice, :info].each do |type|
+          - if flash[type] && flash[type].any?
+            .messages{:class => type.to_s}
+              %a.delete{:href => "#"}
+                =image_tag "/images/icons/actions/delete.png"
+              %ul
+                - for message in flash[type]
+                  %li
+                    %span.message= message
+        .crumbs=yield :crumbs
+        =yield

@@ -1,0 +1,749 @@
+!width = 960px
+
+
+// http://wonderfullyflawed.com/2008/05/21/clearfix-as-mixin/
+=clearfix
+  *display: inline-block
+  &:after
+    content: " "
+    display: block
+    height: 0
+    clear: both
+    visibility: hidden
+=font
+  :font-family Helvetica, sans-serif
+
+
+
+// general styles
+body
+  :background #f3f3f3
+  :color #686868
+  :font-family Helvetica, sans-serif
+  :line-height 1.2
+a
+  :color #176aa4
+  :text-decoration none
+
+h1
+  :font-size 28px
+  :color #ffffff
+  :font-weight normal
+  &#home_title
+    :background transparent url(/images/home_title.png) 0px 0px no-repeat
+    :width 313px
+    :height 41px
+    :text-indent -9999px
+    :margin-bottom 20px
+h2
+  :color #666666
+  :border-bottom 1px solid #e4e4e4
+  :margin-bottom 20px
+  :padding-bottom 3px
+  :font-size 18px
+  :font-weight bold
+  :position relative
+  +clearfix
+// layout styles
+#header
+  :background #ffffff
+#main
+  :background #ffffff url(/images/splash_border_bottom.gif) top left repeat-x
+  :padding-top 7px
+#header_content
+  :width = !width
+  :margin 0px auto
+  :position relative
+  :height 66px
+  :z-index 1
+#footer
+  :background transparent url(/images/footer_bg.gif) 0px 0px repeat-x
+  :padding-top 4px
+#footer_content
+  :padding-top 30px
+  :position relative
+  :width = !width
+  :margin 0px auto 40px
+#main_content
+  :width = !width
+  :margin 0px auto
+  :padding-top 35px
+  +clearfix
+#splash_band
+  :background #000 url(/images/splash_border_top.gif) 0px 0px repeat-x
+  :padding 7px 0px 0px
+#splash_header
+  :position relative
+  :margin 0px auto
+  :color #ffffff
+  :width = !width
+#splash_content
+  :margin-left -325px
+  :position relative
+  :background #000000 url(/images/splash_glow.png) 0px 0px no-repeat
+  :padding 30px 0px 30px 335px
+  +clearfix
+a#logo
+  :color #444444
+
+  :display block
+  :position absolute
+  :font-size 24px
+  :top 33px
+  :left 150px
+  :color #c1272d
+ul#nav
+  :position absolute
+  :left 327px
+  :top 0px
+  :border-left 1px solid #e2e2e2
+  :z-index 3
+  +clearfix
+  li
+    :display inline
+    :float left
+    :position relative
+    :outline none
+    a.nav_link
+      :display block
+      :float left
+      :border-right 1px solid #e2e2e2
+      :color #666666
+      :font-size 10px
+      :font-weight bold
+      :padding 0px 15px
+      :height 24px
+      :padding-top 45px
+      :text-transform uppercase
+      :letter-spacing 1px
+      &:hover
+        :color #cb2d33
+    &#conference_drop_link
+      :background #ffffff
+      &.selected
+        :background #ffffff
+
+.sub_nav
+  :position absolute
+  :top 69px
+  :left -1px
+  :background #ffffff
+  :border 1px solid #e2e2e2
+  :border-top 0px
+  :font-size 11px
+  :font-weight bold
+  :z-index -1
+  :padding 10px 10px 10px 20px
+  :width 120px
+  :display none
+  :-moz-border-radius-bottomright 5px
+  :-moz-border-radius-bottomleft 5px
+  :-moz-border-radius-topright 5px
+  :-webkit-border-bottom-right-radius 5px
+  :-webkit-border-top-right-radius 5px
+  :-webkit-border-bottom-left-radius 5px
+  .sub_item
+    :margin-top .5em
+ul#foot_nav
+  :width = !width
+  :margin 0px auto
+  +clearfix
+  li
+    :display inline
+    :float left
+    a
+      :font-size 12px
+      :font-weight bold
+      :color #4d4d4d
+      :padding-right 30px
+p#copyright
+  :background transparent url(/images/footer_bug.gif) 0px 0px no-repeat
+  :font-size 11px
+  :color #999999
+  :padding-left 53px
+  :padding-top 5px
+  :position absolute
+  :right 20px
+  :top 30px
+  :height 33px
+  :font-weight bold
+  span
+    :font-weight normal
+    :padding-left 10px
+p#cb_plug
+  :font-size 11px
+  :position absolute
+  :right 200px
+  :top 31px
+  :color #999999
+  :width 155px
+  :padding-top 4px
+  span a
+    :font-weight bold
+    :color #999999
+a#cb_logo
+  :text-indent -9999px
+  :display block
+  :width 40px
+  :height 40px
+  :background transparent url(/images/cb_small.gif) 0px 0px no-repeat
+  :float left
+  :margin-right 8px
+  :position relative
+  :top -4px
+  
+p.splash_tag
+  :font-size 10px
+  :color #ff0000
+  :font-weight bold
+  :text-transform uppercase
+  :letter-spacing 1px
+
+a.header_link
+  :position absolute
+  :top 5px
+  :right 10px
+  :font-size 12px
+  
+a.rss
+  :display block
+  :width 16px
+  :height 16px
+  :background transparent url(/images/icons/feed.png) 0px 0px no-repeat
+  :text-indent -9999px
+a.twitter
+  :display block
+  :width 16px
+  :height 16px
+  :background transparent url(/images/twitter.gif) 0px 0px no-repeat
+  :text-indent -9999px
+a.flickr
+  :display block
+  :width 16px
+  :height 16px
+  :background transparent url(/images/flickr.gif) 0px 0px no-repeat
+  :text-indent -9999px
+a.add
+  :display block
+  :width 16px
+  :height 16px
+  :background transparent url(/images/icons/actions/add.png) 0px 0px no-repeat
+  :text-indent -9999px
+  
+.about
+  :margin-bottom 20px
+  :padding 0px 10px
+.quote
+  :background transparent url(/images/dotted_bottom.gif) 0px 0px repeat-x
+  :padding 20px 0px 0px
+  :margin-bottom 20px
+  :display none
+  .quote_head
+    :background transparent url(/images/speech_bubble.gif) 0px 0px no-repeat
+    :height 34px
+    :padding-bottom 10px
+    :margin 0px 10px
+  p.name
+    :margin-left 45px
+    :color #a4230e
+    :font-size 14px
+    :font-weight bold
+  p.position
+    :color #6f6f6f
+    :font-size 12px
+    :margin-left 45px
+  .quotation
+    :font-size 13px
+    :color #666666
+    :font-style italic
+    :font-family georgia
+    :line-height 1.4
+    :padding 0px 10px 20px
+    :background transparent url(/images/dotted_bottom.gif) bottom left repeat-x
+// forms
+form 
+  +clearfix
+  .legend
+    :float left
+  .radio_group
+    :margin-left 140px
+    .fieldWithErrors
+      :float left
+  label
+    :float left
+    :width 140px
+    :padding 5px 0px 0px 10px
+    :color #666666
+    &.radio
+      :float none
+  .field, fieldset
+    +clearfix
+    :border-bottom 1px solid #e0e0e0
+    :padding 10px 0px
+    &:hover
+      :background-color #fafafa
+  .note
+    :float right
+    :font-size 11px
+input.text, textarea, input.password
+  +font
+  :font-size 1.0em
+  :padding 4px
+  :margin 0px
+  :border 1px solid #e0e0e0
+  :color #666666
+
+textarea
+  :width 410px
+  :float left
+  :height 200px
+
+input.submit
+  :float right
+  :margin 8px
+  
+
+// two col layout
+
+.two_col_large
+  :width 626px
+  :float left
+  :padding-right 21px
+  :border-right 1px solid #e2e2e2
+  :padding-bottom 35px
+  :background transparent url(/images/col_gradiant.jpg) top right repeat-y
+.two_col_small
+  :width 290px
+  :float left
+  :padding-left 22px
+  :padding-bottom 35px
+  
+// three col layout
+.three_col_left, .three_col_middle, .three_col_right
+  :overflow visible
+  h2
+    :border-top 3px solid #e4e4e4
+    :border-bottom 1px solid #e4e4e4
+    :padding 5px 26px 2px 10px
+    :margin-bottom 10px
+    :color #333333
+    :font-size 16px
+
+    
+.three_col_left
+  :width 292px
+  :float left
+  :padding-right 20px
+  :padding-bottom 35px
+  :background transparent url(/images/col_gradiant.jpg) top right repeat-y
+.three_col_middle
+  :width 294px
+  :float left
+  :border-left 1px solid #e2e2e2
+  :border-right 1px solid #e2e2e2
+  :padding 0px 20px 35px
+.three_col_right
+  :width 292px
+  :float left
+  :padding-left 20px
+  :padding-bottom 35px
+// tables ---------------------------------------------------------------------
+table
+  :width 100%
+  :font-size 12px
+  :text-align center
+  :margin-bottom 20px
+  th
+    :color #055385
+  tr
+    :border 0px
+    td, th
+      :vertical-align middle
+      :padding 10px
+      &.first
+        :color #1a9fc0
+        :font-weight bold
+        :font-size 10px
+        :text-transform uppercase
+    &.even
+      td, th
+        :background #eaeaea
+        :border-right 1px solid #ffffff 
+        &.first
+          :background #f0f0f0
+  td.actions
+    :width 42px
+  a.header_link
+    :float right
+    :position static
+  a.delete
+    :background transparent url(/images/icons/actions/delete.png) 0px 0px no-repeat
+    :width 16px
+    :height 16px
+    :display block
+    :text-indent -9999px
+    :float left
+    :margin-left 5px
+  a.edit
+    :background transparent url(/images/icons/actions/edit.png) 0px 0px no-repeat
+    :width 16px
+    :height 16px
+    :display block
+    :text-indent -9999px
+    :float left
+    :margin-left 5px
+
+table.event_calendar
+  a
+    :font-size 11px
+    :font-weight bold
+    &:hover
+      :text-decoration underline
+  p
+    :padding 2px 0px
+// flash notifications
+.messages, .notifications
+  :margin-bottom 15px
+  :padding 5px
+  :-webkit-border-radius 0.6em
+  :-moz-border-radius 0.6em
+  :font-size 12px
+  :position relative
+  &.error
+    :border 1px solid #ff8a8a
+    :color #d00505
+    :background #ffcfcf
+  &.success
+    :border 1px solid #66d066
+    :color #008000
+    :background #ddffdd
+  &.info
+    :border 1px solid #00529B
+    :background-color #BDE5F8
+    :color #00529B
+  &.notice, &.notifications
+    :background #f4f4f4
+    :border 1px solid #e2e2e2
+  li
+    +clearfix
+    :padding 2px 5px
+    :margin 0px
+  a.delete
+    :float right
+    
+// crumbs
+.crumbs
+  :font-size 11px
+  :margin-bottom 10px
+
+
+// events
+ul.compact_events
+  :margin-bottom 20px
+  :padding-left 20px
+  :font-size 11px
+  :color #7e7e7e
+  li
+    :padding 5px 0px
+    :border-bottom 1px solid #efefef
+    +clearfix
+    &:last-child
+      :border-bottom 0px
+  p.date
+    :color #a4230e
+    :border-right 1px solid #bebebe
+    :float left
+    :padding-right 5px
+  p.title
+    :float left
+    :padding-left 5px
+    :border-left 1px solid #dfdfdf
+    a
+      :color #7e7e7e
+ul.upcoming_events
+  :margin-bottom 20px
+  li
+    :padding 10px
+    :border-bottom 1px solid #efefef
+    +clearfix
+    &:last-child
+      :border-bottom 0px
+  .event_image
+    :overflow hidden
+    :float left
+    :margin-right 10px
+    :margin-bottom 10px
+    :border 1px solid #bebebe
+    :background #ffffff
+    :padding 1px
+    
+    img
+      :width 50px
+      :height 50px
+  .event_head
+    :float left
+    :width 208px
+    :margin-bottom 10px
+  p.title a
+    :color #055385
+    :font-size 16px
+    :font-weight bold
+  p.date
+    :color #1a9fc0
+    :font-size 11px
+  .event_summary
+    :clear both
+    :color #7e7e7e
+    :font-size 12px
+
+// event
+#event_head
+  :position relative
+  :margin-bottom 40px
+  +clearfix
+  .headline
+    :position relative
+    :top 18px
+    :margin 0px 10px
+.headline
+  :background #e2e2e2
+  :padding-top 1px
+  :font-size 0px
+  :line-height 0
+#event_logo
+  :position relative
+  :padding-right 10px
+  :background #ffffff
+  :float left
+  :z-index 1
+a.register_button
+  :background transparent url(/images/register_now.png) 0px 0px no-repeat
+  :width 165px
+  :height 37px
+  :display block
+  :text-indent -9999px
+  :float right
+  :z-index 1
+  :position relative
+  &.sold_out
+    :background transparent url(/images/register_sold_out.png) 0px 0px no-repeat
+    :height 55px
+    :top -11px
+.event_intro
+  :font-size 16px
+  :margin-bottom 40px
+  :line-height 1.5
+  +clearfix
+#event_info
+  :margin-bottom 20px
+  :font-size 12px
+  :color #333333
+  +clearfix
+#event_date
+  :width 303px
+  :margin-right 20px
+  :float left
+#event_location
+  :width 303px
+  :float left
+#event_content
+  :margin-bottom 20px
+  :font-size 12px
+a#map_badge
+  :width 57px
+  :height 60px
+  :background transparent url(/images/map.png) 0px 0px no-repeat
+  :float left
+  :margin-right 15px
+  :display block
+  :text-indent -9999px
+#location_details
+p.venue
+  :font-size 14px
+  :font-weight bold
+p.address
+  :color #666666
+  :margin-bottom 10px
+p.instructions
+  :font-weight bold
+  :font-size 10px
+  :text-transform uppercase
+  :color #666666
+  a
+    :color #1a9fc0
+#instructions
+  :font-size 12px
+#calendar_badge
+  :background transparent url(/images/calendar.png) 0px 0px no-repeat
+  :width 57px
+  :height 60px
+  :float left
+  :margin-right 15px
+  p.month
+    :font-weight bold
+    :font-size 11px
+    :color #ffffff
+    :text-transform uppercase
+    :text-align center
+    :padding-top 3px
+  p.date
+    :font-size 30px
+    :font-weight bold
+    :text-align center
+    :padding-top 6px
+#date_details
+  p.long_date
+    :margin-bottom 5px
+  p.duration
+    :font-size 22px
+    :font-weight bold
+    :text-transform lowercase
+ul.event_sponsors
+  :margin-bottom 20px
+  +clearfix
+  li
+    :float left
+    :display inline
+    :margin 5px
+    a
+      :border 1px solid #bebebe
+      :display block
+      :width 82px
+      :height 82px
+  img
+    :width 82px
+    :height 82px
+
+// conferences
+ul.conferences
+  :margin-bottom 20px
+  :text-align center
+  li
+    :margin-bottom 10px
+// sponsors
+ul.sponsors
+  :padding 0px 9px
+  +clearfix
+  li
+    :display inline
+    :float left
+    :margin-bottom 10px
+    &.middle
+      :margin 0px 10px 10px
+    a
+      :border 1px solid #bebebe
+      :display block
+    img
+      :width 82px
+      :height 82px
+// blog
+ul.blog_feed
+  :padding 0px 10px
+  :margin-bottom 20px
+  li
+    :padding-bottom 10px
+    :margin-bottom 10px
+    :border-bottom 1px solid #efefef
+    &:last-child
+      :border-bottom 0px
+  p.date
+    :font-size 11px
+    :color #1a9fc0
+  p.title
+    :margin-bottom 5px
+    :font-size 16px
+    :font-weight bold
+    a
+      :color #055385
+  p.body
+    :font-size 12px
+    :color #7e7e7e
+    :line-height 1.4
+    
+// twitter feed
+ul#twitter_update_list
+  :font-size 12px
+  :line-height 1.5
+  li
+    :padding-bottom 10px
+    :margin-bottom 10px
+    :border-bottom 1px solid #efefef
+    &:last-child
+      :border-bottom 0px
+  a
+    :color #c2c2c2
+    
+  span
+    :display block
+    a
+      :color #1a9fc0
+      :text-decoration underline
+
+// flickr feed
+#flickr_feed
+  :margin-bottom 20px
+  :padding 0px 10px
+  +clearfix
+.flickr_badge_image
+  :float left
+  :display inline
+  :margin 0px 5px 10px
+  :border 1px solid #bebebe
+  :position relative
+  a
+    :display block
+  img
+    :width 75px
+    :height 75px
+    :padding 2px
+// snippets
+
+#about_snippet
+  :color #686868
+  :font-size 12px
+  :line-height 1.5
+  :margin-bottom 10px
+#home_snippet
+  :width 330px
+  :font-size 12px
+  :line-height 1.7
+  :margin-bottom 20px
+#home_image
+  :float right
+  :width 530px
+  :height 260px
+  :text-align right
+  img
+    :display none
+a.more_button
+  :background transparent url(/images/more_button.png) 0px 0px no-repeat
+  :width 168px
+  :height 33px
+  :display block
+  :text-indent -9999px
+
+// pages
+form.member_login
+  :padding 15px 10px 10px
+  :border 1px solid #E0E0E0
+  :margin-bottom 40px
+  :position relative
+  :background #ffffff
+  h2
+    :border 0px
+    :padding 3px
+    :background #ffffff
+    :position absolute
+    :top -13px
+
+  
+// css sandbox
+.css_sandbox
+  +clearfix
+  p
+    :margin-bottom 1em
+  ul
+    :list-style-type disc
+    :list-style-position inside
+    :padding-left 10px
+    :margin-bottom 1em
