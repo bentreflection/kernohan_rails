@@ -1,5 +1,7 @@
-after "deploy:update", "deploy:symlink_configs"
-after "deploy:update", "deploy:symlink_htaccess"
+after "deploy:symlink", "deploy:symlink_configs"
+after "deploy:symlink", "deploy:symlink_htaccess"
+after "deploy:symlink", "deploy:symlink_dirs"
+after "deploy:symlink", "deploy:compile_sass"
 
 default_run_options[:pty] = true
 ssh_options[:forward_agent] = true
