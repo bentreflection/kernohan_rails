@@ -23,6 +23,9 @@ class Admin::PagesController < Admin::Controller
 
     def update
       @page = Page.find(params[:id])
+      if params[:page][:nav_item] == "1"
+        @page.nav_position = Page.nav_items.size+1
+      end
       if @page.update_attributes!(params[:page])
         messages(:success) << 'Page was successfully saved.'
         redirect_to admin_pages_path
@@ -37,6 +40,9 @@ class Admin::PagesController < Admin::Controller
     end
     def create
       @page = Page.new(params[:page])
+      if @page.nav_item && !@page.nav_position
+        @page.nav_position = Page.nav_items.size+1
+      end
       if @page.save
         messages(:success) << 'Page was successfully created.'
         redirect_to admin_pages_path

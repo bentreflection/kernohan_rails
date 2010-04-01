@@ -8,6 +8,7 @@
     %ul#main_nav
       - for page in Page.nav_items
         %li{:class => (params[:id] == page.slug) ? "selected" : ""}=link_to page.nav_title, (page.slug == 'home' ? '/' : (page.core_page ? "/#{page.slug}" : "/pages/#{page.slug}"))
+        - p page.nav_position
     #main
       <!--[if IE]>
       .corner_tl
