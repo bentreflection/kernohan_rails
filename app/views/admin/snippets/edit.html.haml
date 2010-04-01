@@ -5,9 +5,7 @@
   .field
     = f.label :slug, @snippet.slug.titleize
   .field
-    = f.label :notes
-    = f.text_area :notes
-  .field
+    .note The content of this HTML snippet.
     = f.label :text
     = f.text_area :text, :class => "mceEditor"
   .field

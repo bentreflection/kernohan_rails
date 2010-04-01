@@ -1,33 +1,40 @@
 .field
+  .note The page URL i.e. "new-page" = "singwithkellykernohan.com/pages/new-page"
   = f.label :slug
   = f.text_field :slug, :class => "text", :disabled => (params[:action] != "new" && params[:action] != "create" ? true : false)
 .field
-  = f.label :nav_title
-  = f.text_field :nav_title, :class => "text"
-.field
+  .note The page title text that displays at the top of your browser
   = f.label :header_title
   = f.text_field :header_title, :class => "text"
   
 .field
+  .note The tagline that will display across the top of this page.
   = f.label :tagline
   = f.text_field :tagline, :class => "text"
 
 .field
+  .note Should this page appear in the nav?
   =f.label :nav_item, "Nav item?"
   = f.check_box :nav_item
+.field
+  .note If so, what should we call it?
+  = f.label :nav_title
+  = f.text_field :nav_title, :class => "text"
 
   
 - f.fields_for :image_attributes do |image_form|
   .field
-    .note ideal size: 198x132
+    .note Image that appears in the top left of a page. Ideal size: 198x132
     =image_form.label :file, "Logo"
     = image_form.file_field :file
   - unless !f.object.image
     .field
+      .note The current image this page is displaying
       = label_tag "Current Image"
       = link_to image_tag(f.object.image.public_path(:thumb), :class => "logo"), f.object.image.public_path
   
 .field
+  .note The main content of each page. You can enter HTML here.
   = f.label :text
   = f.text_area :text, :class => "mceEditor"
 .field

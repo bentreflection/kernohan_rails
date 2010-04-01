@@ -4,12 +4,11 @@
     %tr
       %th Slug
       %th Text
-      %th Notes
       %th &nbsp;
   %tbody
     - if @snippets.empty?
       %tr
-        %td{:colspan => 4} No Snippets have been created yet.
+        %td{:colspan => 3} No Snippets have been created yet.
     - for snippet in @snippets do
       %tr
         %td=snippet.slug.titleize
