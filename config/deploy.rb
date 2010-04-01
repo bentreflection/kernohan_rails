@@ -30,7 +30,7 @@ namespace :deploy do
   end
   
   task :symlink_htaccess, :role => :app do
-    run "ln -s #{shared_path}/.htaccess #{release_path}/public"
+    run "ln -s #{shared_path}/.htaccess #{release_path}/public/.htaccess"
   end
   
 end
