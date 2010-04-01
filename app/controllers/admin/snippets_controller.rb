@@ -17,6 +17,8 @@ class Admin::SnippetsController < Admin::Controller
     @snippet = Snippet.find(params[:id])
     if @snippet.update_attributes!(params[:snippet])
       messages(:success) << 'Snippet was successfully saved.'
+      expire_page :controller => :pages, :action => :show
+      expire_page :controller => :pages, :action => :contact
       redirect_to admin_snippets_path
     else
       errors_for(@snippet, "There was an error saving this snippet:", true)
@@ -28,6 +30,8 @@ class Admin::SnippetsController < Admin::Controller
     @snippet = Snippet.find(params[:id])
     if @snippet.destroy
       messages(:success) << 'Snippet was successfully deleted.'
+      expire_page :controller => :pages, :action => :show
+      expire_page :controller => :pages, :action => :contact
     else  
       errors_for(@snippet, "There was an error deleting this snippet:", false)
     end

@@ -36,3 +36,8 @@ task :restart, :roles => :app do
   run "chmod 755 #{current_path}/public/dispatch.fcgi"
   run "touch #{current_path}/public/dispatch.fcgi"
 end
+
+
+task :set_permissions do
+donothing = true
+end

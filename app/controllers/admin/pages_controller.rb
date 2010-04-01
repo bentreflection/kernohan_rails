@@ -24,6 +24,8 @@ class Admin::PagesController < Admin::Controller
       @page = Page.find(params[:id])
       if @page.update_attributes!(params[:page])
         messages(:success) << 'Page was successfully saved.'
+        expire_page :controller => :pages, :action => :show
+        expire_page :controller => :pages, :action => :contact
         redirect_to admin_pages_path
       else
         errors_for(@page, "There was an error saving this page:", true)
@@ -38,6 +40,8 @@ class Admin::PagesController < Admin::Controller
       @page = Page.new(params[:page])
       if @page.save
         messages(:success) << 'Page was successfully created.'
+        expire_page :controller => :pages, :action => :show
+        expire_page :controller => :pages, :action => :contact
         redirect_to admin_pages_path
       else
         errors_for(@page, "There was an error creating this page:", false)
@@ -49,6 +53,8 @@ class Admin::PagesController < Admin::Controller
       @page = Page.find(params[:id])
       if @page.destroy
         messages(:success) << 'Page was successfully deleted.'
+        expire_page :controller => :pages, :action => :show
+        expire_page :controller => :pages, :action => :contact
         redirect_to admin_pages_path      
       else
         errors_for(@page, "Unable to delete Page:", true)
