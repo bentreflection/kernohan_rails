@@ -31,6 +31,19 @@ namespace :deploy do
     end
   end
   
+  desc "Update CSS files and replace relative urls with absolute ones"
+  task :compile_sass, :roles => :app do
+    haml_dir = 'haml'
+    run "ls #{current_path}/vendor/gems | grep haml" do |channel, stream, data|
+      haml_dir = data
+    end
+    run <<-BASH
+      for file in #{current_path}/public/stylesheets/sass/*.sass; do
+        #{current_path}/vendor/gems/#{haml_dir}/bin/sass $file #{current_path}/public/stylesheets/`basename ${file%.sass}`.css ; done
+    BASH
+  end
+  
+  
   task :symlink_htaccess, :role => :app do
     run "ln -s #{shared_path}/.htaccess #{release_path}/public/.htaccess"
   end
@@ -45,20 +58,7 @@ namespace :deploy do
       run "mkdir -p #{shared_path}/#{directory}"
       run "ln -nfs #{shared_path}/#{directory} #{release_path}/#{directory}"
     end
-  end  
-  
-  desc "Update CSS files and replace relative urls with absolute ones"
-  task :compile_sass, :roles => :app do
-    haml_dir = 'haml'
-    run "ls #{current_path}/vendor/gems | grep haml" do |channel, stream, data|
-      haml_dir = data
-    end
-    run <<-BASH
-      for file in #{current_path}/public/stylesheets/sass/*.sass; do
-        #{current_path}/vendor/gems/#{haml_dir}/bin/sass $file #{current_path}/public/stylesheets/`basename ${file%.sass}`.css ; done
-    BASH
-  end
-  
+  end    
   
 end
 
