@@ -10,7 +10,6 @@ db/sphinx
 doc/*
 log/*
 tmp/*
-public/cache/*
 public/assets/*
 public/stylesheets/*.css
 public/images/000/*
