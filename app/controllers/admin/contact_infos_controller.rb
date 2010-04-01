@@ -1,4 +1,5 @@
 class Admin::ContactInfosController < Admin::Controller
+  cache_sweeper :site_sweeper
   def edit
     @contact = ContactInfo.find(params[:id])
   end

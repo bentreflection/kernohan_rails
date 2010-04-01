@@ -1,4 +1,5 @@
 class Admin::SnippetsController < Admin::Controller
+  cache_sweeper :site_sweeper
   def index    
     Snippet.find_or_create_by_slug(:slug => 'head_snippet', :text => "<p>Kelly Kernohan is a <b>Speech Level Singing</b> Certified vocal instructor located in Los Angeles, California. Her students include singers of pop music, R&amp;B, musical theater, jazz, country, folk, and rock.</p>")
     Snippet.find_or_create_by_slug(:slug => 'schedule_snippet', :text => "To schedule a lesson with Kelly please email <a href='mailto:kellykernohan@hotmail.com' title='Contact Kelly Kernohan'>kellykernohan@hotmail.com</a>")

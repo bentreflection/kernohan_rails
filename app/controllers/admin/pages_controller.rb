@@ -1,4 +1,5 @@
 class Admin::PagesController < Admin::Controller
+  cache_sweeper :site_sweeper
   def index
       @page = Page.find_or_create_by_slug(:slug => 'home', :nav_title => "Home", :nav_item => true, :nav_position => 1, :tagline => "Do you wish you could sing as naturally and easy as speaking?", :header_title => "Los Angeles Private Singing Lessons", :text => HOME_TEXT, :core_page => true)
       Page.find_or_create_by_slug(:slug => 'lessons', :nav_title => "Lessons",  :nav_item => true, :nav_position => 2,  :tagline => "Take the first step towards fulfilling your singing potential.", :header_title => "Speech Level Singing Vocal Lessons", :text => LESSONS_TEXT, :core_page => true)
