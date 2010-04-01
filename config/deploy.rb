@@ -1,4 +1,5 @@
 after "deploy:update", "deploy:symlink_configs"
+after "deploy:update", "deploy:symlink_htaccess"
 
 default_run_options[:pty] = true
 ssh_options[:forward_agent] = true
@@ -27,7 +28,14 @@ namespace :deploy do
       run "ln -nfs #{shared_path}/#{filename} #{release_path}/config/#{filename}"
     end
   end
+  
+  task :symlink_htaccess, :role => :app do
+    run "ln -s #{shared_path}/.htaccess #{release_path}/public"
+  end
+  
 end
+
+
 
 
 desc "Restart the web server. Overrides the default task for Site5 use."

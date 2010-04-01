@@ -8,7 +8,6 @@ class Admin::ContactInfosController < Admin::Controller
     @contact = ContactInfo.find(params[:id])
     if @contact.update_attributes(params[:contact_info])
       messages(:success) << 'Contact Info was successfully saved.'
-      expire_page :controller => :pages, :action => :contact
       redirect_to edit_admin_contact_info_path(@contact)
     else
       errors_for(@contact, "There was an error saving the contact info:", true)
