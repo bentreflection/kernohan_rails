@@ -1,18 +1,7 @@
 %h1=@page.tagline
 .main
   .half_left
-    %p
-      The
-      %b Kelly Kernohan Vocal Studio
-      is located at:
-      %ul
-        %li=@contact_info.street
-        %li="#{@contact_info.city}, #{@contact_info.state} #{@contact_info.zip}"
-        
-
-    %p
-      Kelly can be reached via email at
-      = link_to @contact_info.email, "mailto:#{@contact_info.email}", :title => 'Private singing lessons with Kelly Kernohan'
+    = @page.text
   .half_right
     .map=google_map(@contact_info.street, @contact_info.city, @contact_info.state, @contact_info.zip)
 .sub=render :partial => "schedule"
