@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   layout 'application'
   # See ActionController::RequestForgeryProtection for details
   # Uncomment the :secret if you're not using the cookie session store
-  protect_from_forgery # :secret => '9fc18df55e82fdcd7025198adf07f8f0'
+  #protect_from_forgery # :secret => '9fc18df55e82fdcd7025198adf07f8f0'
   
   before_filter :get_contact_info
   

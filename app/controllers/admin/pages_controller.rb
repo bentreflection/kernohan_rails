@@ -5,7 +5,7 @@ class Admin::PagesController < Admin::Controller
       Page.find_or_create_by_slug(:slug => 'lessons', :nav_title => "Lessons",  :nav_item => true, :nav_position => 2,  :tagline => "Take the first step towards fulfilling your singing potential.", :header_title => "Speech Level Singing Vocal Lessons", :text => LESSONS_TEXT, :core_page => true)
       Page.find_or_create_by_slug(:slug => 'speech_level_singing', :nav_title => "Speech Level Singing",  :nav_item => true, :nav_position => 3, :tagline => "Sing like you've always wanted with the \"Technique of Legends.\"", :header_title => "Speech Level Singing Los Angeles", :text => SPEECH_LEVEL_SINGING_TEXT, :core_page => true)
       Page.find_or_create_by_slug(:slug => 'contact', :nav_title => "Contact", :nav_item => true, :nav_position => 4, :tagline => "Contacting the Kelly Kernohan Vocal Studio", :header_title => "Contact the Kelly Kernohan Vocal Studio", :text => CONTACT_TEXT, :core_page => true)
-    @pages = Page.find(:all, :order => 'slug ASC')
+    @pages = Page.find(:all, :order => 'nav_position ASC')
     
   end
   
@@ -34,6 +34,24 @@ class Admin::PagesController < Admin::Controller
         render :action => :edit
       end
     end
+
+
+    def update_positions
+      pages = params[:page]
+      pages.each_with_index {|id, index|
+        page = Page.find_by_id(id.to_i)
+        if page
+          page.nav_position = index
+          page.save
+        end
+      }
+      respond_to do |format|
+        format.json {
+          render :text => "success"
+        }
+      end
+    end
+    
 
     def new
       @page = Page.new

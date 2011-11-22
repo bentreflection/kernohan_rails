@@ -3,7 +3,7 @@ ActionController::Routing::Routes.draw do |map|
   map.namespace(:admin) do |a|
     a.root :controller => "snippets", :action => "index"
     a.resources :snippets
-    a.resources :pages
+    a.resources :pages, :collection => {:update_positions => :post}    
     a.resources :contact_infos
   end
   
